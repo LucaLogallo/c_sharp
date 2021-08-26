@@ -1,0 +1,49 @@
+var nomi = new List<string> {"Luca","Giovanni","Maria"};
+foreach(var nome in nomi){
+    Console.WriteLine($"{nome}");
+    Console.WriteLine($"il nome in maiuscolo: {nome.ToUpper()}");
+}
+
+nomi.Add("Domenico");
+nomi.Add("Egidio");
+nomi.Remove("Maria");
+
+Console.WriteLine("\nlista dei nuovi nomi\n");
+foreach(var nome in nomi){
+    Console.WriteLine($"{nome}");
+}
+
+Console.WriteLine($"1nil primo nome: {nomi[0]} \n ci sono {nomi.Count} nomi");
+
+string nc ="Luca";
+var index = nomi.IndexOf(nc);
+
+if(index == -1){
+    Console.WriteLine($"il nome :{nc} non è presente nella lista di nomi");
+}else{
+    Console.WriteLine($"il nome:{nc} è presente nella lista e si trova a posizione {index+1}");
+}
+
+
+Console.WriteLine("\n Lista dei nomi ordinata in ordine alfabetico\n");
+nomi.Sort();
+foreach(var nome in nomi){
+    Console.WriteLine($"{nome} e {nome.ToUpper()}");
+}
+
+/* lista di int */
+var nF = 20;
+Console.WriteLine($"\n i primi {nF} numeri della serie di fibonacci\n");
+var NumeriDiFibonacci = new List<int> {1,1};
+
+for(int i = 0; i < nF; i++){
+    var precedente = NumeriDiFibonacci[NumeriDiFibonacci.Count - 1];
+    var precedente1 = NumeriDiFibonacci[NumeriDiFibonacci.Count - 2];
+
+    NumeriDiFibonacci.Add(precedente + precedente1);
+
+}
+
+foreach(var n in NumeriDiFibonacci){
+    Console.WriteLine($"{n}");
+}
